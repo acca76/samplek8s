@@ -21,7 +21,7 @@ pipeline {
             }
             steps {
                 script {
-                    docker.withRegistry('https://registry.hub.docker.com', 'acca76') {
+                    docker.withRegistry('https://hub.docker.com/repository/docker/acca76/homelab', 'acca76') {
                         app.push("${env.BUILD_NUMBER}")
                         app.push("latest")
                     }
