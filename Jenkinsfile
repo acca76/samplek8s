@@ -8,7 +8,7 @@ pipeline {
             }
             steps {
                 script {
-                    app = docker.build("acca76/k8ssample")
+                    app = docker.build("acca76/homelab/k8ssample")
                     app.inside 
                         sh 'echo $(curl localhost:8080)'
                     }
