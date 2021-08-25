@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("acca76/homelab/helloapp")
+        app = docker.build("acca76/homelab:helloapp")
     }
 
     stage('Push image') {
