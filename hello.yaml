@@ -13,7 +13,6 @@ spec:
       name: hello
       labels:
         app: hello
-        version: blue
     spec:
       containers:
       - name: hello
