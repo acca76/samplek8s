@@ -1,5 +1,6 @@
-pipeline {
-    agent any
+node {
+    def app
+
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
@@ -23,8 +24,12 @@ pipeline {
             app.push("latest")
                     }
         stage('DeployToProduction') {
+            when {
+                branch 'master'
             }
             steps {
+                input 'Deploy to Production?'
+                milestone(1)
                 kubernetesDeploy(
                     kubeconfigId: 'kubeaccess',
                     configs: 'hello.yaml',
@@ -32,4 +37,3 @@ pipeline {
                 )
         }
         }
-    }
