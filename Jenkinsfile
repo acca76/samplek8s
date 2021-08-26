@@ -25,9 +25,10 @@ node {
                     }
         stage('DeployToProduction') {
             steps {
-                input 'Deploy to Production?'
+                script {
                 kubernetesDeploy(configs: "hello.yaml", kubeconfigId: "kubeaccess")
         }
         }
     }
+}
 }
