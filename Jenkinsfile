@@ -26,12 +26,7 @@ node {
         stage('DeployToProduction') {
             steps {
                 input 'Deploy to Production?'
-                milestone(1)
-                kubernetesDeploy(
-                    kubeconfigId: 'kubeaccess',
-                    configs: 'hello.yaml',
-                    enableConfigSubstitution: true
-                )
+                kubernetesDeploy(configs: "hello.yaml", kubeconfigId: "kubeaccess")
         }
         }
     }
