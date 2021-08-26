@@ -36,6 +36,4 @@ node {
                     enableConfigSubstitution: true
                 )
         }
-    }
-}
-}
+        }
