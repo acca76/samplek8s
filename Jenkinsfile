@@ -24,8 +24,6 @@ node {
             app.push("latest")
                     }
         stage('DeployToProduction') {
-            when {
-                branch 'master'
             }
             steps {
                 script {
