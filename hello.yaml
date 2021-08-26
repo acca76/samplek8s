@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: hello
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: hello
@@ -17,13 +17,13 @@ spec:
     spec:
       containers:
       - name: hello
-        image: acca76/helloapp:latest
+        image: docker.io/acca76/homelab:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8088
 ---
 apiVersion: v1
-kind: Service 
+kind: Service
 metadata:
   name: hello-svc
   labels:
