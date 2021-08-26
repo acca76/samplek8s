@@ -28,13 +28,8 @@ node {
                 branch 'master'
             }
             steps {
-                input 'Deploy to Production?'
-                milestone(1)
-                kubernetesDeploy(
-                    kubeconfigId: 'kubeaccess',
-                    configs: 'hello.yaml',
-                    enableConfigSubstitution: true
-                )
+                script {
+                    kubernetesDeploy(configs: "hello.yal", kubeconfigId: "kubeaccess")
         }
         }
     }
