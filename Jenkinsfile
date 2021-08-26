@@ -1,5 +1,5 @@
 node {
-    def app
+    agent any
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
@@ -26,8 +26,11 @@ node {
         stage('DeployToProduction') {
             }
             steps {
-                script {
-                    kubernetesDeploy(configs: "hello.yal", kubeconfigId: "kubeaccess")
+                kubernetesDeploy(
+                    kubeconfigId: 'kubeaccess',
+                    configs: 'hello.yaml',
+                    enableConfigSubstitution: true
+                )
         }
         }
     }
