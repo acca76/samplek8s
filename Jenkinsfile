@@ -31,7 +31,7 @@ node {
                 input 'Deploy to Production?'
                 milestone(1)
                 kubernetesDeploy(
-                    kubeconfigId: 'kubeconfig',
+                    kubeconfigId: 'kubeaccess',
                     configs: 'hello.yaml',
                     enableConfigSubstitution: true
                 )
